@@ -1,0 +1,54 @@
+{
+    "name": "inu/admin",
+    "description": "Admin plugin for Inu CMS",
+    "keywords": [
+        "inu",
+        "admin"
+    ],
+    "homepage": "https://github.com/inu/admin",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Zorca Orcinus",
+            "email": "vs@zorca.org",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Inu\\Admin\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Inu\\Admin\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Inu\\Admin\\AdminServiceProvider"
+            ],
+            "aliases": {
+                "Admin": "Inu\\Admin\\AdminFacade"
+            }
+        }
+    }
+}
